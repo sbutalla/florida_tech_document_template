@@ -1,0 +1,199 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                   LaTeX document template for Florida Tech.                   %%
+%%                              Stephen D. Butalla								 %%
+%%                               2021/10/05, v. 0                                %%
+%%          https://github.com/sbutalla/florida_tech_document_template           %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[10pt]{article}   	
+\usepackage[margin=1in]{geometry}   % set margins  
+%\geometry{letterpaper}          .   % standard letter paper size (A4)
+%\geometry{landscape}               % Uncomment for landscape orientation 
+%\usepackage[parfill]{parskip}      % Uncomment to skip a line for a new paragraph, with no indentation
+%\usepackage{biblatex} 
+\usepackage{graphicx} 		
+\graphicspath{	{}	}               % Set path to the base directory of images/plots location here 
+\usepackage{graphbox}               % 
+\usepackage{amsmath}                % for math	
+\usepackage{amssymb}                % for math
+\usepackage{mathrsfs}
+\usepackage{wasysym}
+\usepackage{physics}
+\usepackage{enumerate}
+\usepackage{array}
+\usepackage{pgfplots}
+\usepackage{subcaption}
+\usepackage{gauss}
+\usepackage{url}
+\usepackage[compat=1.0.0]{tikz-feynman}
+\usepackage{contour}
+\usepackage{subcaption}
+\usepackage{appendix}
+\usepackage{lipsum}
+\usepackage{fancyhdr}
+\usepackage{pgfgantt,ragged2e}
+\usepackage{tikz}
+\usepackage{pgfgantt}
+\usetikzlibrary{calc,positioning,shadows.blur,decorations.pathreplacing,decorations.markings}
+
+\usepackage{lscape}
+\newcommand{\dbar}{{\mkern3mu\mathchar'26\mkern-12mu d}}
+\def\dbar{{\mathchar'26\mkern-12mu d}}
+\def\c{3\times 10^8\, \textrm{m} \cdot\textrm{s}^{-1}}
+\def\e{1.6\times 10^{-19}\, \textrm{C}}
+\def\ep{8.85\times 10^{-12} \ F \ m^{-1}}
+\def\MeVc2{\text{ }\dfrac{\textrm{MeV}}{\textrm{c}^2}}
+\def\GeVc2{\dfrac{\textrm{GeV}}{\textrm{c}^2}}
+\newcommand{\nuc}[3]{{}^{#3}_{#2}#1}
+\renewcommand{\vec}[1]{\boldsymbol{\mathrm{#1}}}
+
+
+
+\usepackage{xcolor}
+
+%%%%% set up hyperref %%%%%
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+%\usepackage{feynman}
+\usepackage{tikz}
+\usetikzlibrary{arrows, arrows.meta}
+\usetikzlibrary{patterns,arrows,calc,decorations.pathmorphing}
+\usetikzlibrary{calc}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{20,120,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+%%%%% set preferences for language here %%%%%
+\lstset{
+	basicstyle=\ttfamily\scriptsize,%
+	language=bash,%
+	frame = single, %
+    %basicstyle=\color{red},
+    breaklines=true,%
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+}
+
+
+%%%%% header/footer definitions here %%%%%
+\fancyhf{}
+\pagestyle{fancy}
+\lhead{Subject here}
+\rhead{Stephen D. Butalla, 2022/09/27}
+\lfoot{Page \thepage}
+
+%%%%% Add title page graphics %%%%%
+\makeatletter         
+\def\@maketitle{
+%\raggedright
+\includegraphics[width = 80mm]{FloridaTechNewLogo}\\
+[8ex]
+\begin{center}
+{\Huge \textbf \@title }\\[4ex] 
+{\Large  \@author}\\[4ex] 
+\@date\\[8ex]
+\end{center}}
+\makeatother
+
+
+\title{Title here}
+\author{Stephen D. Butalla\\ \normalsize{\url{sbutalla2012@my.fit.edu}}\\~\\
+\normalsize{Department of Aerospace, Physics and Space Sciences}\\ \normalsize{Florida Institute of Technology}\\\normalsize{150 W. University Blvd., Melbourne, FL, USA,  32901}}
+\date{March YY, 2022}
+
+
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{Circuits}
+\lipsum
+\subsection{Subsection}
+\lipsum[0]
+\begin{equation}\label{eqn:Higgslagrangian} 
+\mathcal{L}\subset - \big|D_{\mu}\Phi\big|^{2} + \big|D_{\mu}\Phi_{D}\big|^{2} + m_{\Phi}^{2}\big|\Phi\big|^{2}+ m_{\Phi_{D}}^{2}\big|\Phi_{D}\big|^{2}-\lambda\big|\Phi\big|^{4}-\rho\big|\Phi_{D}\big|^{4}-\kappa\big|\Phi\big|^{2}\big|\Phi_{D}\big|^{2}
+\end{equation}
+
+
+%\begin{figure}[!htp]
+%     \centering
+%     \begin{subfigure}[b]{0.46\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{}
+%         \caption{\label{fig:label0}Text}
+%     \end{subfigure}
+%     %\hfill
+%     \begin{subfigure}[b]{0.46\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{}
+%         \caption{\label{fig:label1}Text}
+%     \end{subfigure}
+%        \caption{\label{fig:label}Text}
+%\end{figure}
+
+
+
+\begin{table}[!ht]
+\caption{Sample Table}
+\label{tab:sampleTable} 
+\centering
+\begin{tabular}{c c| c c c} 
+\hline
+Sample 	& table		&  0 & 1 & 2\\
+\hline
+2		& 3					& 5		& 6		& 7\\
+8		& 9 				& 10		& 11	& 12\\
+\hline 
+\end{tabular}
+\end{table}
+
+
+%\bibliographystyle{plain}
+%\bibliography{mybibliography}
+
+
+
+\begin{thebibliography}{14} 
+\bibitem{sampleBibItem} A. AuthorName, ``Sample bib item,'' 2022.
+\end{thebibliography}
+
+\appendix
+\section{Sample Appendix Section}
+\lipsum[1]
+
+
+
+
+
+%\subsection{Invited Talks}
+
+%\textbf{S.~Butalla}, ``Advanced Bash Scripting," \href{https://research.fit.edu/media/site-specific/researchfitedu/hep/heplaba/documents/conferences-and-workshops/national-amp-international/BashScripting_Butalla.pdf}{talk} presented at the \textit{Linux Workshop}, Eastern Mennonite University, Harrisonburg, Virginia, Aug.~26, 2019.
+
+
+\end{document}
+
+
+
